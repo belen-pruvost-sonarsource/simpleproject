@@ -7,5 +7,12 @@ public class SimpleClass {
         "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+
         "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+
         "aaaaaaaaaaaaaaa!").matches(); // Sensitive
+
+
+        java.util.regex.Pattern.compile("(a+)+").matcher(
+        "bbbbbbbbbb"+
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+
+        "aaaaaaaaaaaaaaa!").matches(); // Sensitive
     }
 }
