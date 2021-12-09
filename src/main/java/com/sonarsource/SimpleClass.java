@@ -20,6 +20,20 @@ public class SimpleClass {
     return resultSet.next();
   }
 
+  public boolean authenticate2(javax.servlet.http.HttpServletRequest request, java.sql.Connection connection) throws SQLException {
+
+    Connection conn = DriverManager.getConnection("jdbc:derby:memory:myDB;create=true", "login", "");
+
+    String user = request.getParameter("user");
+    String pass = request.getParameter("pass");
+
+    String query = "SELECT * FROM users WHERE user = '" + user + "' AND pass = '" + pass + "'"; // Unsafe
+
+    java.sql.Statement statement = connection.createStatement();
+    java.sql.ResultSet resultSet = statement.executeQuery(query); // Noncompliant
+    return resultSet.next();
+  }
+
 
     int foo(int a) {
 
